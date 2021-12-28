@@ -1,28 +1,16 @@
+import "reflect-metadata";
 import express from "express";
+
+import { router } from "./routes";
+
+import "./database";
 
 const app = express();
 
-/**
- * ?GET      => Busca de uma informação
- * ?POST     => Inserir (criar) uma informação
- * ?PUT      => Alterar uma informação
- * ?DELETE   => Remover um dado/informação
- * ?PACTH    => Alterar uma informação específica
- 
-* *Primeiro parâmetro que será enviado será um recurso = rota
-* *Segundo parâmetro separado por virgula será uma função que recebe "Request" e "Response" 
-
-* ?REQUEST => Entrando
-* ?RESPONSE => Saindo 
-*/
-
-app.get("/test", (request, response) => {
-    return response.send("Olá NLW");
-}); 
-
-app.post("/test-post", (request, response) =>{
-    return response.send("Olá NLW test-post");
-})
+app.use(express.json());
+app.use(router);
 
 // http://localhost:3080
-app.listen(3080,() => console.log("Server is running NLW"));
+app.listen(3080,() => console.log("Server is running"));
+
+
