@@ -14,7 +14,7 @@
 
   [ x ] Não é permitido cadastrar Tag sem nome
 
-  [ x ] Não é permitido o cadastro por usuários que não sejam administradores
+  [  ] Não é permitido o cadastro por usuários que não sejam administradores
 
 - Cadastro de elogios
 
