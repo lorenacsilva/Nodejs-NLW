@@ -1,12 +1,7 @@
 import { getCustomRepository } from 'typeorm';
 import { TagsRepositories } from '../repositories/TagsRepositories';
-
-interface ITagRequest{
-    name: string;
-}
-
 class CreateTagService{
-    async execute({name}:ITagRequest){
+    async execute(name: string){
         const tagsRepositories = getCustomRepository(TagsRepositories)
 
         if(!name) {
